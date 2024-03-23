@@ -1,8 +1,11 @@
 import { ResetIcon } from "@radix-ui/react-icons";
 
 export default function ResetButton({ setCount }) {
-  const handleClick = () => {
+  const handleClick = (event) => {
     setCount(0);
+
+    // adding to prevent it from interferring with the spacebar functionality
+    event.currentTarget.blur();
   };
 
   return (
